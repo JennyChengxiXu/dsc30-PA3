@@ -111,20 +111,20 @@ public class Sorts {
     }
 
     /**
-     * this recursion method quicksort
+     * this recursion method quickSort
      * right is larger that it.
      * if the length between the start and the end, is smaller or equal to
-     * cutoff, then we sort the array by insertion, otherwise quicksort
+     * cutoff, then we sort the array by insertion, otherwise quickSort
      * @param list the input list
      * @param start the position the sorting starts
      * @param end the position the sorting ends
      * @return the completely sorted version of the input array
      */
-    public void QuickSort(ArrayList<Integer> list, int start, int end) {
+    public void quickSort(ArrayList<Integer> list, int start, int end) {
         if (start < end) {
             int pivotIndex = partition(list, start, end);
-            QuickSort(list, start, pivotIndex - 1);
-            QuickSort(list, pivotIndex + 1, end);
+            quickSort(list, start, pivotIndex - 1);
+            quickSort(list, pivotIndex + 1, end);
         }
     }
 

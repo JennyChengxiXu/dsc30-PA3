@@ -120,11 +120,11 @@ public class Sorts {
      * @param end the position the sorting ends
      * @return the completely sorted version of the input array
      */
-    public void quickSort(ArrayList<Integer> list, int start, int end) {
+    public void QuickSort(ArrayList<Integer> list, int start, int end) {
         if (start < end) {
             int pivotIndex = partition(list, start, end);
-            quickSort(list, start, pivotIndex - 1);
-            quickSort(list, pivotIndex + 1, end);
+            QuickSort(list, start, pivotIndex - 1);
+            QuickSort(list, pivotIndex + 1, end);
         }
     }
 

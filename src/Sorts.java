@@ -17,7 +17,7 @@ import static java.util.Arrays.*;
  * This is a class called Sorts, that includes different methods to sort arrays.
  */
 public class Sorts {
-
+    public int divide=2;
     /**
      * This method performs insertion sort on the input arraylist
      *
@@ -25,15 +25,18 @@ public class Sorts {
      * @param start The inital index on subsection of Arraylist we want to sort
      * @param end The final index of the subsection of Arraylist we want to sort
      */
+
     public void InsertionSort(ArrayList<Integer> list, int start, int end) {
 
         int current=0;
         if(start<end){
+            // for loop to find the number at i position its final position
             for (int i = start+1; i <=end; i++) {
                 int preIndex=i-1;
                 int standard=list.get(preIndex);
                 current = list.get(i);
                 int currentPosition=i;
+                // find the number at i position its final position in partially sorted part
                 while (standard>current){
                     list.set(preIndex,current);
                     list.set(currentPosition,standard);
@@ -62,7 +65,7 @@ public class Sorts {
     public void MergeSort(ArrayList<Integer> list, int start, int end) {
 
         if (start < end) {
-            int mid = start + (end - start) / 2;
+            int mid = start + (end - start) / divide;
             MergeSort(list, start, mid);
             MergeSort(list, mid + 1, end);
 
@@ -146,10 +149,15 @@ public class Sorts {
         arr.set(l,pivot);
         int i=l+1;
         int j=h;
+        /* loop through other elements than the pivot to see whether it is larger or smaller
+        than the pivot
+         */
         while (i<=j){
+            //move the l to right till see an element larger than pivot
             while(i<=j && arr.get(i)<=pivot){
                 i++;
             }
+            //move the h to left till see an element smaller or equal to pivot
             while(i<=j && arr.get(j)>pivot){
                 j--;
             }
@@ -226,15 +234,20 @@ public class Sorts {
             ArrayList<Integer> sorted= new ArrayList<Integer>();
             int bucketNum= assignNumBuckets(list);
             List<Integer>[] buckets = new List[bucketNum];
+            // for loop to create arraylists in the array buckets
             for (int i = 0; i < bucketNum; i++) {
                 buckets[i] = new ArrayList<>();
             }
             Integer min = Collections.min(list);
+            // for loop the list to find its position in buckets
             for(int i=0; i< list.size();i++){
                 int position=assignBucketIndex(list.get(i),bucketNum,min);
                 buckets[position].add(list.get(i));
 
             }
+            /* for loop the buckets, and insertion sort the bucket, pull elements in order into
+            the output arraylist  sorted.
+             */
             for (int i=0; i<bucketNum;i++){
                 if (buckets[i].size()!=0){
                     ArrayList<Integer> tem= (ArrayList<Integer>) buckets[i];
@@ -255,23 +268,27 @@ public class Sorts {
 
         public ArrayList<Integer> countSort (ArrayList < Integer > list) {
             int max = 0;
+            // find the largest element in list
             for (int i = 0; i < list.size(); i++) {
                 if (list.get(i) > max) {
                     max = list.get(i);
                 }
             }
+            // fill count with the number of elements at position element
             int[] count = new int[max + 1];
             for (int i = 0; i < list.size(); i++) {
                 count[list.get(i)]=count[list.get(i)]+1;
             }
+            // make the number of position i be the sum of all elements in front of it
             for (int i = 1; i <= max; i++) {
                 count[i] += count[i-1];
             }
             ArrayList<Integer> sorted = new ArrayList<Integer>(list.size());
+            //create an arraylist of size(list.size())
             for (int i = 0; i < list.size(); i++) {
                 sorted.add(0);
             }
-
+            // pull elements into sorted according to the number at its position in count -1.
             for (int i = 0; i < list.size(); i++) {
                 int position= count[list.get(i)]-1;
                 sorted.set(position,list.get(i));

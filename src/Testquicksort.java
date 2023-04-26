@@ -28,7 +28,7 @@ public class Testquicksort {
     }
 
     public static void main(String[] args) {
-        int[] new1=new int[]{9, 6, 4, 1, 0};
+        int[] new1=new int[]{1, 9, 6, 0, 4};
         int low=0;
         int high=4;
         int index1=partition(new1,0,4);

@@ -1,12 +1,12 @@
 /*
- * NAME: TODO
- * PID:  TODO
+ * NAME: Chengxi Xu
+ * PID:  A17461647
  */
 
 import java.util.ArrayList;
 
 /**
- * TODO: add class header
+ * This class is a test of the running time need by the running the code
  */
 public class RuntimeAnalysis {
 
@@ -103,7 +103,7 @@ public class RuntimeAnalysis {
         for (int i = 0; i < numRun; i++) {
             data = deepCopyArrayList(temp);
             startTime = System.currentTimeMillis();
-            sorts.QuickSort(data, 0, data.size() - 1);
+            sorts.quickSort(data, 0, data.size() - 1);
             endTime = System.currentTimeMillis();
             totalTime += (endTime - startTime);
         }
@@ -191,10 +191,12 @@ public class RuntimeAnalysis {
     public static void main(String[] args) {
         int numData;
 
-        numData = NUM_DATA;
-        for (int i = 0; i < NUM_TEST; i++) {
-            ArrayList<Integer> data = randomNumbers(numData, MIN, MAX);
-            timeInsertionSort(data, NUM_RUN);
+        numData = 600000;
+        for (int i = 0; i <1; i++) {
+            ArrayList<Integer> data = randomNumbers(numData,MIN,MAX);
+            timeQuickSort(data,NUM_RUN);
+            timeMergeSort(data, NUM_RUN);
+            timeModifiedQuickSort(data, NUM_RUN,16);
             numData += numData;
         }
     }

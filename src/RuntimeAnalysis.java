@@ -103,7 +103,7 @@ public class RuntimeAnalysis {
         for (int i = 0; i < numRun; i++) {
             data = deepCopyArrayList(temp);
             startTime = System.currentTimeMillis();
-            sorts.quickSort(data, 0, data.size() - 1);
+            sorts.QuickSort(data, 0, data.size() - 1);
             endTime = System.currentTimeMillis();
             totalTime += (endTime - startTime);
         }

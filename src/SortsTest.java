@@ -48,7 +48,7 @@ class SortsTest {
     }
 
     @Test
-    void QuickSort() {
+    void quickSort() {
         Sorts newSort= new Sorts();
         ArrayList<Integer> arr1= new ArrayList<Integer>();
         arr1.add(5);

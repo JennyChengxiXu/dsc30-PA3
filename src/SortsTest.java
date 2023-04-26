@@ -48,7 +48,7 @@ class SortsTest {
     }
 
     @Test
-    void quickSort() {
+    void QuickSort() {
         Sorts newSort= new Sorts();
         ArrayList<Integer> arr1= new ArrayList<Integer>();
         arr1.add(5);
@@ -76,9 +76,9 @@ class SortsTest {
         List<Integer> answer1= new ArrayList<>(Arrays.asList(1, 2, 3, 5, 5, 6, 7, 9));
         List<Integer> answer2= new ArrayList<>(Arrays.asList(1, 2, 2, 3, 3));
         List<Integer> answer3= new ArrayList<>(Arrays.asList(0, 1, 3, 4, 5, 6, 8));
-        newSort.quickSort(arr1,0,arr1.size()-1);
-        newSort.quickSort(arr2,0,arr2.size()-1);
-        newSort.quickSort(arr3,0,arr3.size()-1);
+        newSort.QuickSort(arr1,0,arr1.size()-1);
+        newSort.QuickSort(arr2,0,arr2.size()-1);
+        newSort.QuickSort(arr3,0,arr3.size()-1);
         Assertions.assertEquals(arr1,answer1);
         Assertions.assertEquals(arr2,answer2);
         Assertions.assertEquals(arr3,answer3);
@@ -114,9 +114,9 @@ class SortsTest {
         List<Integer> answer1= new ArrayList<>(Arrays.asList(1, 2, 3, 5, 5, 6, 7, 9));
         List<Integer> answer2= new ArrayList<>(Arrays.asList(1, 2, 2, 3, 3));
         List<Integer> answer3= new ArrayList<>(Arrays.asList(0, 1, 3, 4, 5, 6, 8));
-        newSort.quickSort(arr1,0,arr1.size()-1);
-        newSort.quickSort(arr2,0,arr2.size()-1);
-        newSort.quickSort(arr3,0,arr3.size()-1);
+        newSort.QuickSort(arr1,0,arr1.size()-1);
+        newSort.QuickSort(arr2,0,arr2.size()-1);
+        newSort.QuickSort(arr3,0,arr3.size()-1);
         Assertions.assertEquals(arr1,answer1);
         Assertions.assertEquals(arr2,answer2);
         Assertions.assertEquals(arr3,answer3);
